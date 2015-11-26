@@ -1,0 +1,17 @@
+<DOCTYPE></DOCTYPE>
+<html>
+  <head>
+    <title>Real time web chat</title>
+    <!--script src="/chat.js"></script-->
+    <script src="/socket.io/socket.io.js"></script>
+    <?php echo $this->Html->script('/js/jquery-1.10.2.min.js'); ?>
+    <?php echo $this->Html->script('/js/chat.js'); ?>
+  </head>
+  <body>
+    <div id="content" style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;"></div>
+  </body>
+  <div class="controls">
+    <input id="field" style="width:350px;"/>
+    <input id="send" type="button" value="send"/>
+  </div>
+</html>

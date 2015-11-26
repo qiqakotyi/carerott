@@ -1,0 +1,221 @@
+html {
+	height: 100%;
+}
+body{
+	font-family: sans-serif;
+	font-size: 12px;
+	background-color: #fff !important;
+	height: 100%;
+	/*background: url(../img/bg.jpg) no-repeat center;*/
+	/*background-color: #eee !important;*/
+	/* no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+}
+
+/*Nav bar style*/
+.navbar-inverse {
+	background-color: rgba(5, 72, 37, 1) !important;
+	background-image: none !important;
+}
+.navbar-inverse .navbar-nav > .active > a {
+	background-color:  #F07F09 !important;
+	background-image: none !important;
+}
+.navbar-default.navbar-shrink {
+    padding: 10px 0;
+    background-color: #F26629;
+}
+.container {
+	/*width: 970px !important;*/
+}
+
+.landing-page{
+	margin-top: 80px !important;
+}
+.body-bg {
+	background: url(../img/student.jpg) no-repeat center ;
+	background-size: cover; 
+}
+/*.landing-page #flashMessage {
+	display: none;
+}*/
+
+.element-register{
+	display:none;
+}
+.hidden{
+	display:none;
+}
+.white{
+	color: #fff !important;
+}
+.right{
+	float:right;
+}
+.red{
+	color: red !important;
+}
+.orange{
+	color: orange !important;
+}
+.header-component-img{
+	width: 100px;
+	float: left;
+	margin: 8px;
+	padding: 0;
+}
+
+/*Login and Sign up*/
+.text-primary {
+	margin: auto 10px 15px;
+	color: #fff !important;
+}
+
+.thumbnails img {
+	width: 217px;
+	height: 145px !important;
+}
+.login {
+	/*background-color: #333;*/
+	/*opacity: 0.8;*/
+	padding: 25px;
+	color: #fff;
+}
+.login .text-primary {
+	margin: auto 10px 15px;
+	color: #fff !important;
+}
+.btn-block:hover {
+	background-color: #F26629 !important;
+}
+.checkbox {
+	margin-top: -50px !important;
+}
+.checkbox label {
+	position: relative;
+}
+.checkbox-inline {
+	padding-left: 0 !important;  
+}
+#inlineCheckbox1 {
+    margin-left: -23px !important;
+}
+
+.select label {
+	display: none;
+}
+input[type="password"] , input[type="text"],input[type="email"] {
+	color: #fff ;
+}
+#UserLoginForm label.active {
+	left: 3px;
+}
+/*Login and Sign up End*/
+
+/* Left col*/
+.left-col {
+	background-color: #FFF;
+}
+.left-col .profile-sidebar {
+	padding: 0;
+}
+
+.left-col ul {
+	list-style: none;
+	font-weight: bold;
+	font-size: 13px;
+	/*padding: 15px 0;*/
+}
+.left-col ul li {
+	margin: 10px 10px 20px 0;
+}
+.left-col ul li a {
+	font-weight: bold;
+	font-size: 16px;
+	color: #666;
+}
+
+.left-col span {
+	padding: 5px;
+}
+
+.left-col-user-tasks ul li {
+	border-bottom: 1px dotted #f0f4f7;
+}
+
+.left-col-user-tasks ul li:last-child {
+	border-bottom: none;
+}
+
+.left-col-user-tasks ul li a {
+	color: #93a3b5;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.left-col-user-tasks ul li a i {
+	margin-right: 8px;
+	font-size: 14px;
+}
+
+.left-col-user-tasks ul li a:hover {
+	background-color: #fafcfd;
+	color: #5b9bd1;
+}
+
+.left-col-user-tasks ul li.active {
+	border-bottom: none;
+}
+
+.left-col-user-tasks ul li.active a {
+	color: #5b9bd1;
+	background-color: #f6f9fb;
+	border-left: 2px dotted #5b9bd1;
+	margin-left: -2px;
+}
+
+.btn-block {
+	background-color: rgba(5, 72, 37, 1) !important; 
+	background-image: none !important;
+}
+
+/*Left col end*/
+
+/*user edit form*/
+#UserEditForm .text label {
+	display: none;
+}
+#UserEditForm input[type="text"] {
+	color: #333 !important;
+}
+.btn-default {
+	background-image: none !important;
+	background-color: #054825 !important;
+	color: #fff !important; 
+}
+.submit {
+	width: 30%;
+}
+.submit .button {
+	background-color: #F07F09 !important;
+}
+/* Mentees */
+.table-mentees table thead {
+	background-color: #111;
+	color: #fff;
+}
+.table-mentees table tbody {
+	background-color: #111;
+}
+.table-mentees table td a {
+	    /*color: #fff;*/
+	    text-transform: capitalize;
+	    font-weight: 700;
+}
+
+/*    transition: all .5s ease;
+    font-size: 14px;
+    background: rgba(66, 66, 66, 0.39);*/
