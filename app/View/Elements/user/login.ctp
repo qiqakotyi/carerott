@@ -34,7 +34,7 @@
 							First Name<span class="req">*</span>
 						</label>
 						<input type="text" required autocomplete="off" /> -->
-						<?php echo $this->Form->input('Name', array('class' => ''));?>
+						<?php echo $this->Form->input('name',array('label'=>'Name') ,array('class' => ''));?>
 					</div>
 
 					<div class=" col-sm-6 field-wrap">
@@ -42,7 +42,7 @@
 							Last Name<span class="req">*</span>
 						</label>
 						<input type="text"required autocomplete="off"/> -->
-						<?php echo $this->Form->input('email address', array('class' =>''));?>
+						<?php echo $this->Form->input('email',array('label'=>'Email Address'), array('class' =>''));?>
 					</div>
 				</div>
 				<div class="row">

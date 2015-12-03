@@ -129,14 +129,24 @@ class UsersController extends AppController {
 			return $this->redirect($this->referer());
 		}
 		$this->request->data['User']['field_of_study_id'] = $this->request->data['User']['fieldofstudies_id'];
+
+//		echo "<pre>";
+//		print_r($this->request->data);
+//		exit;
+
 		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved, please login.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'landing'));
-			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			if($this->User->find('all',array('conditions'=>"email='{$this->data['User']['email']}'"))) {
+				$this->Session->setFlash(__('Email Address is already used,Plesae try again'), 'default', array('class' => 'alert alert-danger'));
+			}else {
+				$this->User->create();
+				if ($this->User->save($this->request->data)) {
+					$this->Session->setFlash(__('The user has been saved, please login.'), 'default', array('class' => 'alert alert-success'));
+					return $this->redirect(array('action' => 'landing'));
+				} else {
+					$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+				}
 			}
+
 		}
 		$userTypes = $this->UserType->find('list');
 		$institutions = $this->Institution->find('list');
