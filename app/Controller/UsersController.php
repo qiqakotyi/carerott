@@ -32,12 +32,14 @@ class UsersController extends AppController {
 				if($user['User']['user_types_id'] == 1){
 				//mentor
 					$this->redirect(array("controller"=>"users","action"=>"/edit/".$user['User']['id']));
+				}elseif ($user['User']['user_types_id'] == 3) {
+					$this->redirect(array("controller"=>"users","action"=>"/edit/".$user['User']['id']));
 				}else{
 					$this->redirect(array("controller"=>"Institutions","action"=>"/"));
 				}
 			}
 		}else{
-			$this->Session->setFlash(__('Invalid request'), 'default', array('class' => 'alert alert-danger'));
+			$this->Session->setFlash(__('Invalid request shit head'), 'default', array('class' => 'alert alert-danger'));
 			return $this->redirect($this->referer());
 		}
 		/*
@@ -83,6 +85,7 @@ class UsersController extends AppController {
 		$this->loadModel('Institution');
 		$this->loadModel('UserType');
 		$this->loadModel('FieldOfStudy');
+
 		
 		if ($this->request->is('post')) {
 			$this->User->create();
@@ -119,6 +122,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->loadModel('Company');
 		$this->loadModel('Institution');
 		$this->loadModel('UserType');
 		$this->loadModel('FieldOfStudy');
@@ -171,9 +175,19 @@ class UsersController extends AppController {
 		$this->loadModel('UserType');
 		$this->loadModel('FieldOfStudy');
 
+
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}
+
+		//Grab the list of user related campaigns from the model
+		$this->loadModel('Campaign');
+		$campaignList = $this->Campaign->getList($id);
+		if(!empty($campaignList)) {
+			$this->set('campaigns', $campaignList);
+		}
+
+
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been updated.'), 'default', array('class' => 'alert alert-success'));
