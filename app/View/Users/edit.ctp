@@ -1,37 +1,116 @@
-<h2><?php echo __('Edit Profile'); ?></h2>
-<hr>
-<div class="row">
+<div class="row edit-profile">
+	<!-- <h3><?php echo __('Edit Profile'); ?></h3> -->
+	<!-- <hr> -->
+
 	<!-- left column -->
-	<div class="col-md-3">
-		<div class="text-center">
+	<div class="col-md-3 left-col">
+		<!-- <div class="text-center">
 			<img src="//placehold.it/150" class="avatar img-circle" alt="avatar">
 			<h6>Upload a different photo...</h6>
 
 			<input type="file" class="form-control">
-		</div>
-	</div>
+		</div> -->
+		<div class="profile-sidebar">
+			<!-- SIDEBAR USERPIC -->
+			<div class="profile-userpic">
+				<img src="../../img/wara.jpg" class="img-responsive" alt="">
+			</div>
+			<!-- END SIDEBAR USERPIC -->
+			<!-- SIDEBAR USER TITLE -->
+			<div class="profile-usertitle">
+				<div class="profile-usertitle-name">
+					Lusindiso Qhushela
+				</div>
+				<div class="profile-usertitle-job">
+					Operations Manager
+				</div>
+			</div>
+			<!-- END SIDEBAR USER TITLE -->
+			<!-- SIDEBAR BUTTONS -->
+			<div class="profile-userbuttons">
+				<button type="button" class="btn  btn-sm btn-follow">Follow</button>
+				<button type="button" class="btn  btn-sm btn-message">Message</button>
+			</div>
+			<!-- END SIDEBAR BUTTONS -->
+			<!-- SIDEBAR MENU -->
+			<div class="profile-usermenu">
+				<ul class="nav">
+					<li class="active">
+						<a href="Home.html">
+							<i class="glyphicon glyphicon-home"></i>
+							Home </a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="glyphicon glyphicon-user"></i>
+								Account Settings </a>
+							</li>
+							<li>
+								<a href="#" target="_blank">
+									<i class="glyphicon glyphicon-ok"></i>
+									Tasks </a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="glyphicon glyphicon-flag"></i>
+										Help </a>
+									</li>
 
-	<!-- edit form column -->
-	<div class="col-md-4 personal-info">
+								</ul>
+							</div>
+							<!-- END MENU -->
+						</div>
+					</div>
 
-		<h3>Personal info</h3>
-		<?php echo $this->Form->create('User', array('role' => 'form')); ?>
+					<!-- edit form column -->
+					<div class="col-md-6 personal-info mid-col">
+						<div class="row">
+							<div class="col-md-6">
+								<h3>Personal info</h3>
+								<?php echo $this->Form->create('User', array('role' => 'form')); ?>
 
-		<div class="form-group">
-			<?php echo $this->Form->input('id', array('class' => 'form-control', 'placeholder' => 'Id'));?>
-		</div>
+								<div class="form-group">
+									<?php echo $this->Form->input('id', array('class' => 'form-control', 'placeholder' => 'Id'));?>
+								</div>
 
-		<div class="form-group">
-			<?php echo $this->Form->input('name', array('class' => 'form-control', 'placeholder' => 'Name'));?>
-		</div>
-		<div class="form-group">
-			<?php echo $this->Form->input('institutions_id', array('class' => 'form-control', 'placeholder' => 'Institutions Id'));?>
-		</div>
-		<div class="form-group">
-			<?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>
-		</div>
+								<div class="form-group">
+									<?php echo $this->Form->input('name', array('class' => 'form-control', 'placeholder' => 'Name'));?>
+								</div>
+								<div class="form-group">
+									<?php echo $this->Form->input('institutions_id', array('class' => 'form-control', 'placeholder' => 'Institutions Id'));?>
+								</div>
+								<div class="form-group">
+									<?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>
+								</div>
 
-		<?php echo $this->Form->end() ?>
-	</div>
-</div>
+								<?php echo $this->Form->end() ?>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 right-col">
+						<div class="profile-sidebar">
+
+							<!-- SIDEBAR MENU -->
+							<div class="right-col-campaigns">
+								<ul class="nav">
+									<li><h5>Campaigns to follow</h5></li>
+									<li>
+										<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941980&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=mandeladay&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 135px; height: 20px;" data-screen-name="mandeladay"></iframe>
+									</li>
+									<li>  
+										<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941981&amp;dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=StandardBankZA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 159px; height: 20px;" data-screen-name="StandardBankZA"></iframe>
+									</li>
+									<li>  
+										<iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941982&amp;dnt=false&amp;id=twitter-widget-2&amp;lang=en&amp;screen_name=FNBSA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 112px; height: 20px;" data-screen-name="FNBSA"></iframe>
+									</li>
+									<li>  
+										<iframe id="twitter-widget-3" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941984&amp;dnt=false&amp;id=twitter-widget-3&amp;lang=en&amp;screen_name=TelkomZA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 126px; height: 20px;" data-screen-name="TelkomZA"></iframe>
+									</li>
+									
+								</ul>
+							</div>
+							<!-- END MENU -->
+						</div>
+					</div>
+				</div>
 

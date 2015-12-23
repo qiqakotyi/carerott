@@ -1,9 +1,7 @@
 <?php
 $session_user = json_decode($this->Session->read("Auth.userdata"),1);
 ?>
-<div class="container">
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="icon-bar"></span>
@@ -64,6 +62,4 @@ $session_user = json_decode($this->Session->read("Auth.userdata"),1);
 										<?php }  ?>
 									</ul>
 								</div><!--/.nav-collapse -->
-							</div>
 						</div>
-					</div>

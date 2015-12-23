@@ -4,8 +4,8 @@ html {
 body{
 	font-family: sans-serif;
 	font-size: 12px;
-	background-color: #fff !important;
-	height: 100%;
+	 background-color: rgb(245, 245, 245) !important;
+	height: 100vh;
 	/*background: url(../img/bg.jpg) no-repeat center;*/
 	/*background-color: #eee !important;*/
 	/* no-repeat center center fixed; 
@@ -29,7 +29,13 @@ body{
     background-color: #F26629;
 }
 .container {
+	height: 100%;
 	/*width: 970px !important;*/
+}
+
+.selection-container ,.edit-profile,.institutions,.topics{
+	padding: 70px 0;
+	height: 100%;
 }
 
 .landing-page{
@@ -118,6 +124,9 @@ input[type="password"] , input[type="text"],input[type="email"] {
 /* Left col*/
 .left-col {
 	background-color: #FFF;
+	border: 1px dotted #ddd;
+	/*height: 100%;*/
+	height: 100vh;
 }
 .left-col .profile-sidebar {
 	padding: 0;
@@ -177,12 +186,172 @@ input[type="password"] , input[type="text"],input[type="email"] {
 	margin-left: -2px;
 }
 
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+.profile-userpic {
+	padding-top: 10px;
+}
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.btn-follow {
+  background-color: rgba(5, 72, 37, 1);
+  color: #fff;
+}
+.btn-message {
+  background-color: #F26629;
+  color: #fff;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px dotted #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px dotted #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+
+.user-summary {
+  border-bottom: 1px dotted #ddd;
+  padding-bottom: 10px;
+}
+
+.user-summary  h5 {
+  color: #5A7391;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.user-online-status {
+  font-weight: bold;
+}
+
+.user-personal-info {
+  /*border-bottom: 1px dotted #ddd;*/
+}
+
+.profile-row {
+  margin:30px -16px;
+}
+
+.user-personal-info ul li {
+  padding: 5px 0;
+  /*font-weight: bold;*/
+}
+
+.profile-heading {
+  border-bottom: 1px dotted #ddd;
+} 
+
+.user-personal-info h4 {
+  font-weight: bold;
+  margin: auto 25px;
+  padding: 5px;
+}
+
+.info-left ul,.info-right ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: auto 8px;
+}
 .btn-block {
 	background-color: rgba(5, 72, 37, 1) !important; 
 	background-image: none !important;
 }
 
 /*Left col end*/
+/*mid col */
+.mid-col {
+	border: 1px dotted #ddd;
+	/*height: 100%;*/
+	height: 100vh;
+	background: #fff;
+}
 
 /*user edit form*/
 #UserEditForm .text label {
@@ -202,20 +371,77 @@ input[type="password"] , input[type="text"],input[type="email"] {
 .submit .button {
 	background-color: #F07F09 !important;
 }
+.edit-profile {
+	
+}
+/*mid col end*/
+
+/*right col*/
+.right-col {
+	border: 1px dotted #ddd;
+	/*height: 100%;*/
+	height: 100vh;
+	background: #fff;
+}
+.right-col-campaigns h5 {
+  font-weight: bold;
+}
+
+.right-col-campaigns ul li {
+  border-bottom: 1px dotted #f0f4f7;
+  padding: 10px;
+}
+
+.right-col-campaigns ul li:last-child {
+  border-bottom: none;
+}
+
+.right-col-campaigns ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.right-col-campaigns ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.right-col-campaigns ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.right-col-campaigns ul li.active {
+  border-bottom: none;
+}
+
+.right-col-campaigns ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px dotted #5b9bd1;
+  margin-left: -2px;
+}
+
+.camp-img {
+  width: 80%;
+  height: 80%;
+  margin-left: 18px;
+  margin-right: auto;
+  margin-top: 20px
+}
+/*right col end*/
+
 /* Mentees */
 .table-mentees table thead {
-	background-color: #111;
+	background-color: #054825;
 	color: #fff;
 }
 .table-mentees table tbody {
-	background-color: #111;
+	background-color: #fff;
 }
 .table-mentees table td a {
-	    /*color: #fff;*/
+	    color: #333;
 	    text-transform: capitalize;
-	    font-weight: 700;
 }
-
-/*    transition: all .5s ease;
-    font-size: 14px;
-    background: rgba(66, 66, 66, 0.39);*/
