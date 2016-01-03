@@ -31,6 +31,13 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'role' => array(
+            'valid' => array(
+                'rule' => array('inList', array('admin', 'author')),
+                'message' => 'Please enter a valid role',
+                'allowEmpty' => false
+            ),
+        ),
 		'email' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),

@@ -1,4 +1,6 @@
 <?php
+
+//echo Configure::version();
 /**
  * This is core configuration file.
  *
@@ -53,6 +55,8 @@
 		'level' => E_ALL & ~E_DEPRECATED,
 		'trace' => true
 	));
+
+
 
 /**
  * Configure the Exception handler used for uncaught exceptions. By default,

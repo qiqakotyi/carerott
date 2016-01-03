@@ -57,7 +57,9 @@
 			<?php echo $this->fetch('content'); ?>
 
     </div><!-- /.container -->
-	<?php echo $this->element('sql_dump'); ?>
-
+	<?php //echo $this->element('sql_dump'); ?>
+<div>
+<center><?php echo  Configure::version(); ?></center>
+</div>
   </body>
 </html>

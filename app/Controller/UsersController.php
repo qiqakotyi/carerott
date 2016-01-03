@@ -18,7 +18,7 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session', 'Auth', 'Cookie');
+	public $components = array('Loader', 'Paginator', 'Session', 'Auth', 'Cookie');
 /**
  * login method
  *
@@ -38,8 +38,11 @@ class UsersController extends AppController {
 					$this->redirect(array("controller"=>"Institutions","action"=>"/"));
 				}
 			}
-		}else{
+		} else {
 			$this->Session->setFlash(__('Invalid request shit head'), 'default', array('class' => 'alert alert-danger'));
+
+
+
 			return $this->redirect($this->referer());
 		}
 		/*
@@ -50,7 +53,9 @@ class UsersController extends AppController {
 		*/
 		return $this->redirect(array("controller"=>"users",'action' => 'landing'));
 	}
-	public function logout(){
+
+
+	public function logout() {
 	//logout
 		$this->Session->write("Auth.userdata","");
 		$this->Session->delete("Auth");
@@ -72,6 +77,8 @@ class UsersController extends AppController {
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
 	}
+
+
 	public function landing() {
 		$session_user = json_decode($this->Session->read("Auth.userdata"),1);
 		if($session_user){

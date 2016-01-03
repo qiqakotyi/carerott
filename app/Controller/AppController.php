@@ -33,7 +33,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public function beforeFilter(){
 		$this->layout = 'bootstrap';
-		$this->Auth->allow("landing","add", "edit","index", "mentors", "mentorRequest","login", "myMentors","delete", "terms", "contactus","logout", "mymentees","chat");
+		$this->Auth->allow("landing","add", "edit","index", "mentors", "mentorRequest","login", "myMentors","delete", "terms", "contactus","logout", "mymentees","chat", "instructions");
 	}
 	
 	public $components = array(
@@ -44,4 +44,5 @@ class AppController extends Controller {
 			'logoutRedirect' => array('controller' => 'Users', 'action' => 'landing')
 		)
 	);
+
 }

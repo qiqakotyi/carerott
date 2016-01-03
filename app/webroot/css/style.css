@@ -108,7 +108,7 @@ body{
 	display: none;
 }
 input[type="password"] , input[type="text"],input[type="email"] {
-	color: #fff ;
+	color: #000 ;
 }
 #UserLoginForm label.active {
 	left: 3px;

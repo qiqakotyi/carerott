@@ -1,105 +1,92 @@
 <?php
-App::uses('AppController', 'Controller');
-App::uses('Location', 'Institution');
-App::uses('Location', 'UserType');
-App::uses('Location', 'FieldOfStudy');
-/**
- * Created by PhpStorm.
- * User: phumlani
- * Date: 12/8/15
- * Time: 10:53 PM
- */
+
+  class CampaignsController extends AppController
+  {
+	  public $components = array('Loader', 'CampaignAccess');
+	  
+	  public function beforeFilter()
+	  {
+		  parent::beforeFilter();
+		  $this->Auth->allow('create');
+	   }
+	   
+	  public function index()
+	  {
+		  $campaigns = $this->Campaign->find('all', array(
+		     /** 
+			   This line has the user id hard code which is undesireable.
+			   
+			   TRy to see if you can fix this bug. In doing so check the 
+			   loader component.
+			  */
+		     'conditions' => array('Campaign.user_id' => 23)
+			));
+
+		  $this->set(array(
+		     'campaigns' => $campaigns
+			));
+	   }
+	  
+	  public function create($id = null)
+	  {
+		  if(!$this->CampaignAccess->hasCredits($this->_userId, $this->_userTypeId)){
+			 
+			 $this->Session->setFlash(__(
+			    "It turns out you do not have credits to add/edit a campaign.", true
+			   ));
+			   
+			 //Choose where to redirect if a user has no credits  
+			 $this->redirect(array('action' => 'index'));
+		   }
+		   			
+		  if($this->request->is('post')){
+			  
+			  /**
+			    Because when we add a new campaign we do not have the user id we have 
+				to manually add it based on the logged in user.
+			   */
+			  $this->request->data['Campaign']['user_id'] = $this->_userId;
+			  
+			  if($this->Campaign->save($this->data)){
+				  
+				  //Bind Model on the fly. You can unbind it later.
+				  $this->Campaign->bindModel(array(
+				     'belongsTo' => array('Credit')
+					));
+				  
+				  //Get the current value of credits for the user and minus one.
+				  $credit = $this->Campaign->Credit->find('first', array(
+				     'fields' => array('Credit.id', 'Credit.value'),
+				     'conditions' => array('Credit.user_id' => $this->_userId)
+					));
+				  
+				  /**
+				    We could have used the Event System here to dispatch the 
+					credit information update on every save of Campaign model.
+					
+					This updates our credit value everytime a user creates a campaign.
+				  */
+				  $this->Campaign->Credit->save(array(
+				     'id' => $credit['Credit']['id'], 
+					 'value' => (int) $credit['Credit']['value'] - 1
+				    ));
+				  				  
+				  $this->Session->setFlash(__('Campaign has successfully been created', true));
+				  $this->redirect(array('action' => 'index'));
+			   }else{
+				  //On validation failure
+				  $this->Session->setFlash(__('Campaign could not be created', true));
+			  }
+		    }elseif(!empty($id)){
+				
+			  $this->data = $this->Campaign->find('first', array(
+			      'conditions' => array('Campaign.active' => 1, 'Campaign.id' => $id)
+				));
+		   } 
+	   }
 
 
+	  public  function edit() {
 
-class CampaignsController extends AppController {
-
-    public $components = array('CampaignAccess', 'Paginator', 'Session', 'Auth', 'Cookie');
-
-
-
-
-    public function  index() {
-        $this->autoRender = false;
-//                echo "checking"; exit;
-
-                $session_user = json_decode($this->Session->read("Auth.userdata"),3);
-                $campaigns = array();
-                if($session_user) {
-                    $campaigns = $this->Campaign->getList();
-
-                    if($campaigns > 0) {
-                        $this->set('campaigns',$campaigns);
-                    } else {
-
-                    }
-
-
-
-                }
-        $this->set('campaigns', $campaigns);
-        }
-
-
-
-
-    public function add($id = null) {
-
-
-        //get user session
-        $session_user = json_decode($this->Session->read("Auth.userdata"),3);
-
-        //extract user id
-//        $userId = $session_user['User']['id'];
-        $authId = $session_user['User']['auth_id'];
-
-//        echo "<pre>";
-//        print_r($session_user); exit;
-
-//        if (!$this->Campaign->exists($id)) {
-//            throw new NotFoundException(__('Invalid Campaign'));
-//        }
-
-
-
-
-
-
-        if(!$this->CampaignAccess->isAllowed($authId)){
-//            $this->redirect(array('action' => 'instructions'));
-            $this->redirect(array('controller'=>'campaigns','action' => 'instructions'));
-//            throw new NotFoundException(__('You are not allowed to create any campaigns. Please but bundles.'));
-
-        }
-
-
-        //Make the Campaign available to the view automaticcaly if we editing
-        if(!is_null($id)){
-            $this->data = $this->Campaign->find('first', array(
-                'conditions' => array('id' => $id)
-            ));
-        }
-
-        //Check if user has posted the form edit and continue saving on data validation success
-        if ($this->request->is('post')) {
-
-            pr($this->data); exit();
-            if($this->Campaign->save($this->data)){
-                $this->Session->setFlash(/* Flash message here...*/);
-                $this->redirect(/* Url will go here maybe list user campaigns within this controller...*/);
-            }else{
-                $this->Session->setFlash(/* Flash message here...*/);
-            }
-
-        }
-
-        $this->render('create');
-    }
-
-
-    public function instructions    () {
-
-    }
-
-
-}
+	  }
+   }
