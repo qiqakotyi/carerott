@@ -44,7 +44,7 @@
 			<div class="tabs">
 					<ul>
 						<li>
-							<?php echo $this->Html->link(__('<span class="glyphicon"></span>Create Campaign'), array('controller' => 'campaigns', 'action' => 'add'), array('escape' => false)); ?>
+							<?php echo $this->Html->link(__('<span class="glyphicon"></span>Create Campaign'), array('controller' => 'campaigns', 'action' => 'create'), array('escape' => false)); ?>
 						</li>
 				 	</ul>
 				 	<?php if(isset($campaigns)): ?>

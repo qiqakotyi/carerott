@@ -55,6 +55,11 @@ $session_user = json_decode($this->Session->read("Auth.userdata"),1);
 												Terms and conditions
 											</a>
 										</li>
+										<li>
+											<a class="white" href="<?php echo $this->webroot.'campaigns/campaigns'; ?>">
+												Campaigns
+											</a>
+										</li>
 										<?php if($session_user){ ?>
 										<li>
 											<a class="red" href="<?php echo $this->webroot.'users/logout'; ?>">
@@ -62,6 +67,17 @@ $session_user = json_decode($this->Session->read("Auth.userdata"),1);
 											</a>
 										</li>
 										<?php }  ?>
+										<?php
+											if($session_user){
+												if($session_user['User']['user_types_id'] == 3){
+										?>
+													<li>
+														<a class="white" href="<?php echo $this->webroot.'campaigns/mycampaigns'; ?>">
+															My Campaigns
+														</a>
+													</li>
+										<?php }} ?>
+
 									</ul>
 								</div><!--/.nav-collapse -->
 							</div>

@@ -23,7 +23,9 @@ protected $Controller;
 	 {		 
 		 $hasCredits = false;
 		 if($userTypeId == 3){
-			
+
+
+
 			$creditModel = ClassRegistry::init('Credit');
 			$credit = $creditModel->find('first', array(
 			    'fields' => array('Credit.value'),

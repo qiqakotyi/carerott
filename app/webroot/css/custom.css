@@ -1,0 +1,7 @@
+#tabs ul li {
+    list-style-type: none;
+}
+
+#tabs .form-group .input.text label {
+    color: #000000!important;
+}

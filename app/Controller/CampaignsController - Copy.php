@@ -78,5 +78,9 @@
 
     }
 
+    public function payments() {
+
+    }
+
 
 }

@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-1">
 <div>
   <h4 style="color: maroon;">Campaign list</h4>
   <?php echo $this->Html->link('Create new', array('controller' => 'campaigns', 'action' => 'create'), array('class' => 'btn-default')); ?>
