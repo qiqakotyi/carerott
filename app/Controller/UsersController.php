@@ -24,6 +24,57 @@ class UsersController extends AppController {
  *
  * @return void
  */
+
+
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->userModel = 'User';
+		$this->Auth->allow('*');
+		// Controller spesific beforeFilter
+	}
+
+	public function admin_dashboard() {
+
+	}
+
+	public function admin_login()
+	{
+//		echo "Phumlani"; exit;
+		if( $this->Session->check('User') ) {
+			$this->redirect(array('controller'=>'users','action'=>'admin_dashboard','admin'=>true));
+		}
+
+		if (!empty($this->data)) {
+			// set the form data to enable validation
+			$this->User->set($this->data);
+
+			// see if the data validates
+			if ($this->User->validates()) {
+				// check user is valid
+
+				$result = $this->User->check_admin_user_data($this->data);
+
+
+				if ($result !== FALSE) {
+					// update login time
+					$this->User->id = $result['User']['id'];
+					$this->User->saveField('last_login', date("Y-m-d H:i:s"));
+					// save to session
+					$this->Session->write('User', $result);
+//					$this->Session->write("Auth.userdata",json_encode($result));
+					$this->Session->setFlash('You have successfully logged in', 'flash_good');
+					$this->redirect(array('controller' => 'users', 'action' => 'admin_dashboard','admin'=>true));
+				} else {
+					$this->Session->setFlash('Either your Username of Password is incorrect', 'flash_bad');
+				}
+			}
+
+		}
+
+	}
+
+
 	public function login(){
 		if($this->request->is('post')){
 			$user = $this->User->find('first', array('conditions'=>array("User.email"=>$this->request->data['User']['email'], "User.password"=>$this->request->data['User']['password'])));
@@ -48,6 +99,7 @@ class UsersController extends AppController {
 		*/
 		return $this->redirect(array("controller"=>"users",'action' => 'landing'));
 	}
+
 	public function logout(){
 	//logout
 		$this->Session->write("Auth.userdata","");
