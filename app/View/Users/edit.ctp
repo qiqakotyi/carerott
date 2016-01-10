@@ -94,19 +94,8 @@
                         <?php foreach($campaigns as $campaign ): ?>
                             <?php   $id = $campaign['Campaign']['id'];  ?>
                             <li class="<?php echo $campaign['Campaign']['id']; ?>">
-                                <?php echo $this->Html->link(__('<span class="glyphicon"></span>'.$campaign['Campaign']['name']), array('controller' => 'campaigns', 'action' => 'add'), array('escape' => false)); ?></li>
-<!--                            <li> -->
-<!--                                <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941980&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=mandeladay&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 135px; height: 20px;" data-screen-name="mandeladay"></iframe> -->
-<!--                            </li> -->
-<!--                            <li>-->
-<!--                                <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941981&amp;dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=StandardBankZA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 159px; height: 20px;" data-screen-name="StandardBankZA"></iframe> -->
-<!--                            </li> -->
-<!--                            <li>-->
-<!--                                <iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941982&amp;dnt=false&amp;id=twitter-widget-2&amp;lang=en&amp;screen_name=FNBSA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 112px; height: 20px;" data-screen-name="FNBSA"></iframe> -->
-<!--                            </li> -->
-<!--                            <li>-->
-<!--                                <iframe id="twitter-widget-3" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941984&amp;dnt=false&amp;id=twitter-widget-3&amp;lang=en&amp;screen_name=TelkomZA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 126px; height: 20px;" data-screen-name="TelkomZA"></iframe> -->
-<!--                            </li> -->
+                                <?php echo $this->Html->link(__('<span class="glyphicon"></span>'.$campaign['Campaign']['name']), array('controller' => 'campaigns', 'action' => 'campaigns'), array('escape' => false)); ?>
+                            </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </ul>
