@@ -41,11 +41,11 @@
 	<![endif]-->
 	<?php
 		echo $this->Html->script('/js/main.js');
-		echo $this->Html->script('/js/chat.js');
+		// echo $this->Html->script('/js/chat.js');
 	?>
 
     <style type="text/css">
-    	body{ padding: 70px 0px; }
+    	/*body{ padding: 70px 0px; }*/
     </style>
 
   </head>

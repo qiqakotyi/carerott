@@ -137,6 +137,7 @@
  */
 	//Configure::write('App.jsBaseUrl', 'js/');
 
+Configure::write('Routing.prefixes', array('admin'));
 /**
  * Uncomment the define below to use CakePHP prefix routes.
  *
@@ -150,9 +151,7 @@
  *
  * Enables:
  *	`admin_index()` and `/admin/controller/index`
- *	`manager_index()` and `/manager/controller/index`
- *
- */
+ *	`manager_index()` and `/manager/controller/index`~
 Configure::write('Routing.prefixes', array('admin'));
 
 /**

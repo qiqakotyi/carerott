@@ -32,10 +32,38 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public function beforeFilter(){
+
+		if ((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))) {
+			$this->layout = 'admin';
+		}
+
 		$this->layout = 'bootstrap';
-		$this->Auth->allow("landing","add", "edit","index", "mentors", "mentorRequest","login", "myMentors","delete", "terms", "contactus","logout", "mymentees","chat", "instructions","campaigns","campaign","payments","mycampaigns");
+		$this->Auth->allow(
+			"landing",
+			"add",
+			"edit",
+			"index",
+			"mentors",
+			"mentorRequest",
+			"login",
+			"myMentors",
+			"delete",
+			"terms",
+			"contactus",
+			"logout",
+			"mymentees",
+			"chat",
+			"instructions",
+			"campaigns",
+			"campaign",
+			"payments",
+			"mycampaigns",
+			"admin_dashboard"
+		);
 	}
-	
+
+
+
 	public $components = array(
 		'Session',
 		'Cookie',

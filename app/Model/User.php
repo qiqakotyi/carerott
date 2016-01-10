@@ -92,6 +92,37 @@ class User extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
+
+
+	function check_admin_user_data($data) {
+		// init
+		$return = FALSE;
+
+		// find user with passed username
+		$conditions = array(
+			'User.email'=>$data['User']['email'],
+			'User.user_types_id'=>'3'
+		);
+		$user = $this->find('first',array('conditions'=>$conditions));
+
+		// not found
+		if(!empty($user)) {
+//			$salt = Configure::read('Security.salt');
+			// check password
+			if($user['User']['password'] == $data['User']['password']) {
+				$return = $user;
+			}
+		}
+
+		return $return;
+	}
+
+
+
+
+
+
+
 /**
  * belongsTo associations
  *

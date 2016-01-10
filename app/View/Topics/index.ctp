@@ -2,9 +2,9 @@
 <div class="topics index">
 
 	<div class="row">
-		<div class="col-md-9 col-md-offset-2">
+		<div class="col-md-9 ">
 			<div class="page-header">
-				<h2><?php echo __('Relationship guidelines'); ?></h2>
+				<h3><?php echo __('Relationship guidelines'); ?></h3>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -12,7 +12,10 @@
 
 
 	<div class="row">
-		<div class="col-md-9 col-md-offset-2">
+		<div class="col-md-3">
+
+		</div>
+		<div class="col-md-6 ">
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<thead>
 					<tr>
@@ -26,7 +29,7 @@
 						<td><?php echo h($topic['Topic']['id']); ?>&nbsp;</td>
 						<td><?php echo h($topic['Topic']['name']); ?>&nbsp;</td>
 						<td>
-							<span  href="/cakephp/carerott/index.js" data-target="/cakephp/carerott/index.js" role="button" class="btn btn btn-success btn-sm" id="message-mentor" target="_blank"> Message mentor </span>
+							<span  href="#" data-target="#" role="button" class="btn btn btn-success btn-sm" id="message-mentor" target="_blank"> Message mentor </span>
 							<!-- <span id="modal-367580" href="#modal-container-367580" role="button" class="btn btn btn-success btn-sm" data-toggle="modal" id="student-register"> Message mentor </span> -->
 						</td>
 
@@ -52,7 +55,29 @@
 			</ul>
 			<?php } ?>
 
-		</div> <!-- end col md 9 -->
+		</div> <!-- end col md 6 -->
+		<div class="col-md-3">
+			<!-- SIDEBAR MENU -->
+			<div class="right-col-campaigns">
+				<ul class="nav">
+					<li><h5>Campaigns to follow</h5></li>
+					<li>
+						<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941980&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=mandeladay&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 135px; height: 20px;" data-screen-name="mandeladay"></iframe>
+					</li>
+					<li>  
+						<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941981&amp;dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=StandardBankZA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 159px; height: 20px;" data-screen-name="StandardBankZA"></iframe>
+					</li>
+					<li>  
+						<iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941982&amp;dnt=false&amp;id=twitter-widget-2&amp;lang=en&amp;screen_name=FNBSA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 112px; height: 20px;" data-screen-name="FNBSA"></iframe>
+					</li>
+					<li>  
+						<iframe id="twitter-widget-3" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ab4ec33f73214445796a87ce54aee452.en.html#_=1450124941984&amp;dnt=false&amp;id=twitter-widget-3&amp;lang=en&amp;screen_name=TelkomZA&amp;show_count=false&amp;show_screen_name=true&amp;size=m" style="position: static; visibility: visible; width: 126px; height: 20px;" data-screen-name="TelkomZA"></iframe>
+					</li>
+					
+				</ul>
+			</div>
+			<!-- END MENU -->
+		</div>
 	</div><!-- end row -->
 
 
