@@ -92,8 +92,8 @@
                     <?php if(isset($campaigns)): ?>
                         <li><h5>Campaigns to follow</h5></li> 
                         <?php foreach($campaigns as $campaign ): ?>
-                            <?php   $id = $campaign['Campaign']['id'];  ?>
-                            <li class="<?php echo $campaign['Campaign']['id']; ?>">
+<!--                            --><?php //  $id = $campaign['Campaign']['id'];  ?>
+                            <li class="">
                                 <?php echo $this->Html->link(__('<span class="glyphicon"></span>'.$campaign['Campaign']['name']), array('controller' => 'campaigns', 'action' => 'campaigns'), array('escape' => false)); ?>
                             </li>
                         <?php endforeach; ?>
