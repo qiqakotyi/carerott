@@ -8,7 +8,33 @@
  */
 
 
-    public function index() {
+    App::uses('AppController', 'Controller');
+    App::uses('Location', 'Institution');
+    App::uses('Location', 'UserType');
+    App::uses('Location', 'FieldOfStudy');
+
+/**
+ * Users Controller
+ *
+ * @property User $User
+ * @property PaginatorComponent $Paginator
+ * @property SessionComponent $Session
+ */
+
+    class CompanyController extends AppController {
+
+        public $components = array('Loader', 'Paginator', 'Session', 'Auth', 'Cookie');
+
+        public function beforeFilter() {
+            parent::beforeFilter();
+            $this->Auth->userModel = 'User';
+            $this->Auth->allow('*');
+            // Controller spesific beforeFilter
+        }
+
+        public function admin_create() {
+
+        }
 
     }
 

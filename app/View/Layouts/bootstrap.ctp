@@ -20,6 +20,7 @@
 		echo $this->Html->css('/css/login-form.css');
 		echo $this->Html->css('/css/pre-loader.css');
 		echo $this->Html->css('/css/custom.css');
+		echo $this->Html->css('/css/admin.css');
 		echo $this->Html->css('/js/bootstrap-3.2.0-dist/css/bootstrap.min.css');
 		echo $this->Html->css('/js/bootstrap-3.2.0-dist/css/bootstrap-theme.css');
 		echo $this->Html->script('jquery-1.10.2.min.js');

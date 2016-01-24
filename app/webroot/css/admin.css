@@ -1,0 +1,51 @@
+.edit-profile.dashboard {
+    padding-top: 40px;
+}
+
+
+.edit-profile.dashboard h1 {
+    text-align: left;
+}
+
+.edit-profile.dashboard .col-md-12 {
+    padding-left: 0px;
+}
+
+.edit-profile.dashboard .col-md-12 .container {
+    padding-left: 0px;
+}
+
+.admin-navigation {
+    float: left;
+    width: 100%;
+}
+
+.admin-navigation ul {
+    background: #F07F09;
+    list-style-type: none;
+    float: left;
+    width: 100%;
+}
+
+.admin-navigation ul li {
+    float: left;
+    padding: 10px;
+    width: auto;
+}
+
+.admin-navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-navigation ul li a:hover {
+    color: rgba(5, 72, 37, 1);
+}
+
+.admin-navigation ul li.ui-tabs-active {
+    background: rgba(5, 72, 37, 1);
+}
+
+#CompanyAdminDashboardForm label {
+    display: none;
+}
