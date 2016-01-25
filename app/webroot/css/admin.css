@@ -49,3 +49,19 @@
 #CompanyAdminDashboardForm label {
     display: none;
 }
+
+ul li.client {
+    float: right;
+}
+
+.navbar-nav {
+    width: 85%;
+}
+
+.landing-page.adminLogin .row .col-md-12.login .form .tab-content .alogin {
+    display: block;
+}
+
+.landing-page.adminLogin .row .col-md-12.login .form .tab-content .alogin .field-wrap input {
+    color: #ffffff;
+}

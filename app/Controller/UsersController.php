@@ -38,9 +38,15 @@ class UsersController extends AppController {
 
 	}
 
+
+	public function admin_create(){
+		echo "Phumlani";exit;
+	}
+
+
 	public function admin_login()
 	{
-//		echo "Phumlani"; exit;
+		//echo "Phumlani"; exit;
 		if( $this->Session->check('User') ) {
 			$this->redirect(array('controller'=>'users','action'=>'admin_dashboard','admin'=>true));
 		}

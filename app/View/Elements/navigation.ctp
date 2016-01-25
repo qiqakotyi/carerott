@@ -75,7 +75,19 @@ $session_user = json_decode($this->Session->read("Auth.userdata"),1);
 														</a>
 													</li>
 										<?php }} ?>
-
+										<?php if($session_user){ ?>
+											<li class="client">
+												<a class="red" href="<?php echo $this->webroot.'users/logout'; ?>">
+													Logout
+												</a>
+											</li>
+										<?php } else { ?>
+											<li class="client">
+													<a class="white" href="<?php echo $this->webroot.'admin/users/login'; ?>">
+														Client Login
+													</a>
+											</li>
+										<?php } ?>
 									</ul>
 								</div><!--/.nav-collapse -->
 						</div>
